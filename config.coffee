@@ -9,5 +9,5 @@ config =
   "upyun_username":"",
   "upyun_password":"",
   script_ext:".coffee"
-  assets_head:"/assets"#http://htmljs.b0.upaiyun.com/"
+  assets_head:"/assets"
 module.exports = config

@@ -1,8 +1,8 @@
 {
-    "name": "local-service",
-    "version": "0.0.0",
-    "description": "本地服务，用于开发者本地使用环境开发。",
-    "main": "service.coffee",
+    "name": "LightMVC",
+    "version": "0.0.1",
+    "description": "本框架是一个simple mvc的库，使用它可以快速构建你的nodejs应用，即使你对nodejs了解并不深入也不会影响你的开发之路。一晚上上线一个网站不是梦。",
+    "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -10,7 +10,7 @@
     "license": "BSD",
     "repository": {
         "type": "git",
-        "url": "https://github.com/xinyu198736/souche-f2e"
+        "url": "https://github.com/xinyu198736/LightMVC"
     },
     "dependencies": {
         "express": "~3.4.8",
@@ -22,17 +22,9 @@
         "methods": "~0.1.0",
         "jade": "~1.1.5",
         "coffee-script": "~1.7.1",
-        "express-uglify": "~0.3.1",
         "node-uuid": "~1.4.1",
         "MD5": "~1.2.1",
-        "uglify-js": "~2.4.13",
         "mysql": "~2.1.1",
-        "sequelize": "~2.0.0-dev11",
-        "iced-coffee-script": "~1.7.1-b",
-        "co": "~3.0.5",
-        "walkdo": "~0.9.3",
-        "fs-extra": "~0.8.1",
-        "optimist": "~0.6.1",
-        "ali-oss": "0.0.3"
+        "sequelize": "~2.0.0-dev11"
     }
 }

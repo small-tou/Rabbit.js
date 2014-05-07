@@ -34,4 +34,10 @@ LightMVC for Nodejs
  - `coffee-script` 本框架的默认编程语言
  - `log4js` 用来做日志管理的库
 
+##现在开始
 
+接下来，从头开始为您展示如何使用LightMVC开发应用。
+
+###前期准备
+
+首先确保安装了nodejs环境，然后将此框架从

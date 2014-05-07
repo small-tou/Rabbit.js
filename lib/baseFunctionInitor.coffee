@@ -2,6 +2,10 @@ config = require("./../config.coffee")
 path = require 'path'
 Sequelize = require("sequelize")
 uuid = require 'node-uuid'
+global.__F = (functionName)->
+  return require path.join config.base_path,"functions",functionName+config.script_ext
+
+
 # redis = require("redis")
 # client = redis.createClient()
 # client.on "error",  (err)->

@@ -62,8 +62,8 @@ app.configure(function() {
     //所有错误的集中处理，在任何route中调用next(error)即可进入此逻辑
     app.use(function(err, req, res, next) {
         console.log(err);
-        return res.render('error.jade', {
-            error: err.message
+        return res.render('502.jade', {
+            error: err
         });
     });
     //给模板引擎设置默认函数，例如时间显示moment

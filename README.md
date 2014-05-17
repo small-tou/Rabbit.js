@@ -11,6 +11,7 @@ LightJS is a simple mvc framework for Nodejs
  - 将controller层，function层，model层做了抽象封装，大部分通用逻辑都已经默认添加，极大的减少代码量。
  - 对model层做了特别封装，同时支持sql和mongodb，写法完全一样。
  - model层封装成了promise的写法，让你的数据操作更清晰简介。
+ - 功能插件系统，开发中，常用的服务器功能一句话引入，例如用户系统，无需开发。
  - 默认为您配置了一个完美的express服务器。
  - clone下来，查看文档，立马开始您的开发之旅。
 ##分层

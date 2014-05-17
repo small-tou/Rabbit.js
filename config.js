@@ -15,6 +15,22 @@
           controllers: '/controllers/',
           filters: '/filters/',
           template: '/views/'
+      },
+      mongo_config: {
+          db: {
+              native_parser: true
+          },
+          server: {
+              poolSize: 5
+          },
+          replset: {
+              rs_name: 'myReplicaSetName'
+          },
+          user: '',
+          pass: '',
+          host: "localhost",
+          port: "27017",
+          database: "local"
       }
   };
 

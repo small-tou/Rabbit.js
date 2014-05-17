@@ -1,7 +1,18 @@
 LightJS is a simple mvc framework for Nodejs
 ================
 本框架是一个simple mvc的库，使用它可以快速构建你的nodejs应用，即使你对nodejs了解并不深入也不会影响你的开发之路。一晚上上线一个网站不是梦。
+##特色
 
+ - 清晰的应用分层，可以帮助您构建大型的应用，具体见章节“分层”
+ - 约定大于配置，基本无需配置，即可开始开发之旅。
+ - 应用的restful的route完全根据目录结构自动生成，无需自己声明和指定。
+ - controller和view之间拥有自动映射，你在controller里无需指定渲染的view路径。
+ - 分层之间不采用跳路径方式应用，而是根据名字寻找，无需关心自己和别的分层中得js得目录结构关系。
+ - 将controller层，function层，model层做了抽象封装，大部分通用逻辑都已经默认添加，极大的减少代码量。
+ - 对model层做了特别封装，同时支持sql和mongodb，写法完全一样。
+ - model层封装成了promise的写法，让你的数据操作更清晰简介。
+ - 默认为您配置了一个完美的express服务器。
+ - clone下来，查看文档，立马开始您的开发之旅。
 ##分层
 
 `controller` 是控制器，在基于express的应用里，实际上是route的角色。本框架使用rainbow的改良版实现自动路由，会根据目录自动生成路由，方便大量逻辑的分类和管理。

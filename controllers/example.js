@@ -1,7 +1,7 @@
 var func_example;
 
 func_example = __F('example');
-
+func_mongo_example = __F("mongo_example")
 module.exports = {
     "/": {
         get: function() {
@@ -35,8 +35,28 @@ module.exports = {
                         res.send("ok");
                     }
                 });
+                func_mongo_example.add({
+                    title: Math.random(),
+                    content: Math.random()
+                }).done(function(error, record) {
+                    console.log(record)
+                })
             }
-
+        }
+    },
+    "/update": {
+        get: function() {
+            return function(req, res, next) {
+                //测试mongodb的update
+                func_mongo_example.update({
+                    content: "haha"
+                }).where({
+                    _id: "53771f18ecd19521446e8ce1"
+                }).done(function(error) {
+                    console.log(error);
+                    next();
+                })
+            }
         }
     }
 };

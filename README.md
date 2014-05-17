@@ -56,8 +56,6 @@ LightJS is a simple mvc framework for Nodejs
  - `BaseFunction` 是一个model对象的顶层封装，把sql和mongo的常用方法操作封装起来，调用new BaseFunction(model对象)即可返回一个封装，写在functions层里的，之后你可以在此基础上扩展，_.extend(baseFunction,{其他方法操作})；
  - `loadFunction` 用来加载functions里面的方法，指定相对functions目录的路径即可放回一个function对象。
 
-###接下来是每一层的详解。
-
 
 ###BaseFunction
 
@@ -109,4 +107,18 @@ func.getAll().where({id:{lt:3}}).offset(10).limit(10).order("id desc").fields(['
 
 ###前期准备
 
-首先确保安装了nodejs环境，然后将此框架从
+首先确保安装了nodejs环境，然后将此框架从github clone 到本地目录
+
+`git clone https://github.com/xinyu198736/LightMVC.git project_name`
+
+首先，决定你用mysql还是mongodb，当然也可以同时用二者，只需要按照config.js中得配置示例配置即可，如果不需要使用mysql，把mysql_config整个去掉即可，否则会报错。
+
+其他的配置基本不需要修改，默认即可。配置文件有详细注释，可以自行查看。
+
+对了，还有最基本的 `npm install` 安装一下依赖的包。
+
+还真别说，这时候你启动`node server.js`按照道理来说，整个应用都会成功启动起来，这时候应用已经跑起来啦。
+
+###开发一个应用逻辑的步骤
+
+首先，给你的应用定义相应地Model，

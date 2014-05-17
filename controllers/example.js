@@ -1,7 +1,7 @@
 var func_example;
 
-func_example = __F('example');
-func_mongo_example = __F("mongo_example")
+func_example = loadFunction('example');
+func_mongo_example = loadFunction("mongo_example")
 module.exports = {
     "/": {
         get: function() {

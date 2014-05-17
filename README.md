@@ -14,7 +14,7 @@ LightJS is a simple mvc framework for Nodejs
  - 功能插件系统，开发中，常用的服务器功能一句话引入，例如用户系统，无需开发。
  - 默认为您配置了一个完美的express服务器。
  - clone下来，查看文档，立马开始您的开发之旅。
- 
+
 ##分层
 
 `controller` 是控制器，在基于express的应用里，实际上是route的角色。本框架使用rainbow的改良版实现自动路由，会根据目录自动生成路由，方便大量逻辑的分类和管理。
@@ -46,6 +46,15 @@ LightJS is a simple mvc framework for Nodejs
  - `MD5` 用来生成md5
  - `coffee-script` 本框架的默认编程语言
  - `log4js` 用来做日志管理的库
+
+##全局对象和方法
+
+注意，不要自己在程序中引入任何全局方法和变量，对应用有强烈破坏性。本框架引入的全局变量是为了方便使用，不要在任何地方使用相同命名的变量和方法。
+
+ - `BaseModel` 用于sql的orm的model对象，调用 new BaseModel("model定义路径") 即可返回一个sequelize的model数据对象。
+ - `BaseMongoModel` 用于mongodb的mongoose对象，跟BaseModel类似。
+ - `BaseFunction` 是一个model对象的顶层封装，把sql和mongo的常用方法操作封装起来，调用new BaseFunction(model对象)即可返回一个封装，写在functions层里的，之后你可以在此基础上扩展，_.extend(baseFunction,{其他方法操作})；
+ - `loadFunction` 用来加载functions里面的方法，指定相对functions目录的路径即可放回一个function对象。
 
 ##现在开始
 

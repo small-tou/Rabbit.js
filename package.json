@@ -26,6 +26,7 @@
         "MD5": "~1.2.1",
         "mysql": "~2.1.1",
         "sequelize": "~2.0.0-dev11",
-        "underscore": "*"
+        "underscore": "*",
+        "mongoose": "*"
     }
 }

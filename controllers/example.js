@@ -7,11 +7,29 @@ module.exports = {
         get: function() {
             this.useFilter(['example'])
             return function(req, res, next) {
-                func_example.findAll().where({
-                    id: {
-                        gt: 3
-                    }
-                }).fields(['id', 'content']).raw(true).done(function(error, datas) {
+                // func_example.findAll().where({
+                //     id: {
+                //         gt: 3
+                //     }
+                // }).fields(['id', 'content']).raw(true).done(function(error, datas) {
+                //     if (error) {
+                //         next(error);
+                //     } else {
+                //         res.send(datas);
+                //     }
+                // });
+
+                //从mongodb读取一个记录的例子
+                // func_mongo_example.findByField("content", "haha").fields(['title', 'content']).raw(true).done(function(error, datas) {
+                //     if (error) {
+                //         next(error);
+                //     } else {
+                //         res.send(datas);
+                //     }
+                // });
+
+                // 从mongodb读取多个实例例子
+                func_mongo_example.findAll().fields(['title', 'content']).done(function(error, datas) {
                     if (error) {
                         next(error);
                     } else {

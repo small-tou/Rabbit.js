@@ -2,10 +2,8 @@
 
   config = {
       run_port: 5678,
-      mysql_host: "127.0.0.1", //数据库地址
-      mysql_table: "example", //数据库表名
-      mysql_username: "root", //数据库用户名
-      mysql_password: "", //数据库密码
+
+
       base_path: __dirname, //应用根路径，程序中常用
       script_ext: ".js", //编程用的脚本后缀
       assets_head: "/assets",
@@ -15,6 +13,12 @@
           controllers: '/controllers/',
           filters: '/filters/',
           template: '/views/'
+      },
+      mysql_config: {
+          host: "127.0.0.1", //数据库地址
+          table: "example", //数据库表名
+          username: "root", //数据库用户名
+          password: "", //数据库密码
       },
       mongo_config: {
           db: {

@@ -97,8 +97,6 @@ var func = new BaseFunction(Example);
 func.getAll().where({id:{lt:3}}).offset(10).limit(10).order("id desc").fields(['id','title','content']).done(function(error,datas){
     
 })
-
-
 ```
 
 ##现在开始

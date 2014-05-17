@@ -14,6 +14,7 @@ LightJS is a simple mvc framework for Nodejs
  - 功能插件系统，开发中，常用的服务器功能一句话引入，例如用户系统，无需开发。
  - 默认为您配置了一个完美的express服务器。
  - clone下来，查看文档，立马开始您的开发之旅。
+ 
 ##分层
 
 `controller` 是控制器，在基于express的应用里，实际上是route的角色。本框架使用rainbow的改良版实现自动路由，会根据目录自动生成路由，方便大量逻辑的分类和管理。

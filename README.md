@@ -56,9 +56,9 @@ LightJS is a simple mvc framework for Nodejs
  - `loadService` 用来加载services里面的方法，指定相对services目录的路径即可放回一个services对象。
 
 
-###BaseFunction
+###BaseModel
 
-BaseFunction是本框架对Model层的一个常用功能封装，将mongodb和mysql的操作做了统一，并且将sequelize的操作方式封装成promise的链式操作，更清晰直观。
+BaseModel是本框架对Model层的一个常用功能封装，将mongodb和mysql的操作做了统一，并且将sequelize的操作方式封装成promise的链式操作，更清晰直观。
 
 基本的api:
 

@@ -1,10 +1,10 @@
 var app, config, express, http, less, lessmiddle, log4js, path, rainbow;
 
-express = require("express");
+express = require('express');
 
-http = require("http");
+http = require('http');
 
-path = require("path");
+path = require('path');
 
 config = require('./config.js');
 
@@ -20,19 +20,19 @@ module.exports = app = express();
 
 app.configure(function() {
     var logger;
-    app.set("port", config.run_port);
+    app.set('port', config.run_port);
     //模板所在路径
-    app.set("views", path.join(__dirname, 'views'));
-    app.set("view engine", "jade");
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'jade');
     app.use(express.favicon());
 
     //静态文件访问支持，less实时编译
-    app.use("/assets", lessmiddle({
-        src: __dirname + "/assets",
+    app.use('/assets', lessmiddle({
+        src: __dirname + '/assets',
         compress: true
     }));
-    app.use("/assets", express["static"](__dirname + "/assets"));
-    app.use("/uploads", express["static"](__dirname + "/uploads"));
+    app.use('/assets', express['static'](__dirname + '/assets'));
+    app.use('/uploads', express['static'](__dirname + '/uploads'));
     //日志支持
     log4js.configure({
         appenders: [{
@@ -56,12 +56,12 @@ app.configure(function() {
     //rainbow配置
     rainbow.route(app, config.rainbow);
     //404处理
-    app.all("*", function(req, res, next) {
+    app.all('*', function(req, res, next) {
         return res.render('404.jade');
     });
     //所有错误的集中处理，在任何route中调用next(error)即可进入此逻辑
     app.use(function(err, req, res, next) {
-        console.log(err);
+        console.trace(err);
         return res.render('502.jade', {
             error: err
         });
@@ -73,7 +73,7 @@ app.configure(function() {
     app.locals.assets_head = config.assets_head;
 });
 
-app.configure("development", function() {
+app.configure('development', function() {
     app.use(express.errorHandler());
-    app.use(express.logger("dev"));
+    app.use(express.logger('dev'));
 });

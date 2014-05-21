@@ -19,7 +19,7 @@ LightJS is a simple mvc framework for Nodejs
 
 `controller` 是控制器，在基于express的应用里，实际上是route的角色。本框架使用rainbow的改良版实现自动路由，会根据目录自动生成路由，方便大量逻辑的分类和管理。
 
-`function` 是方法集合，类似于spring里的service层，提供针对此方法的各种操作方法，可以给任意controller调用或者给其他function调用。
+`service` 是方法集合，类似于spring里的service层，提供针对此方法的各种操作方法，可以给任意controller调用或者给其他service调用。
 
 `model` 是数据模型的定义，在本框架中，真正的model已经被高度抽象，大部分方法都预先定义，基本你看到的model只负责定义数据模型的数据格式。
 
@@ -51,10 +51,8 @@ LightJS is a simple mvc framework for Nodejs
 
 注意，不要自己在程序中引入任何全局方法和变量，对应用有强烈破坏性。本框架引入的全局变量是为了方便使用，不要在任何地方使用相同命名的变量和方法。
 
- - `BaseModel` 用于sql的orm的model对象，调用 new BaseModel("model定义路径") 即可返回一个sequelize的model数据对象。
- - `BaseMongoModel` 用于mongodb的mongoose对象，跟BaseModel类似。
- - `BaseFunction` 是一个model对象的顶层封装，把sql和mongo的常用方法操作封装起来，调用new BaseFunction(model对象)即可返回一个封装，写在functions层里的，之后你可以在此基础上扩展，_.extend(baseFunction,{其他方法操作})；
- - `loadFunction` 用来加载functions里面的方法，指定相对functions目录的路径即可放回一个function对象。
+ - `BaseModel` 是一个model对象的顶层封装，把sql和mongo的常用方法操作封装起来，调用new BaseModel(model对象)即可返回一个封装，写在functions层里的，之后你可以在此基础上扩展，_.extend(baseFunction,{其他方法操作})；
+ - `loadService` 用来加载services里面的方法，指定相对services目录的路径即可放回一个services对象。
 
 
 ###BaseFunction
@@ -89,16 +87,15 @@ BaseFunction是本框架对Model层的一个常用功能封装，将mongodb和my
 
 ```
 var Example = new BaseModel('examples');
-//同步数据库
-Example.sync();
-//用model对象生成一个其方法集合
-var func = new BaseFunction(Example);
 
-func.getAll().where({id:{lt:3}}).offset(10).limit(10).order("id desc").fields(['id','title','content']).done(function(error,datas){
+Example.getAll().where({id:{lt:3}}).offset(10).limit(10).order({id:"desc"}).fields(['id','title','content']).done(function(error,datas){
     
 })
 ```
+###特色功能
 
+ - route重命名，用目录自动生成的route不够restful？可以用rename这个方法重命名route，具体见controller示例。
+ - filter全局配置，用正则配置
 ##现在开始
 
 接下来，从头开始为您展示如何使用LightMVC开发应用。

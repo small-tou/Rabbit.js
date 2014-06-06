@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+var program = require('commander'),
+    updateCLI = require('./update');
+
+program
+    .version(libInfo.version)
+
+program
+    .command('rabbit create')
+    .description('fast mvc framework for nodejs')
+    .action(function(options) {
+        updateCLI.create(options)
+    });
+
+
+program.parse(process.argv); // 这行必须是结尾

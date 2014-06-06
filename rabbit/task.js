@@ -5,10 +5,14 @@ parser.parseExpression('1 * * * * *', {}, function(err, interval) {
         console.log('Error: ' + err.message);
         return;
     }
-
+    var next = interval.next();
     while (true) {
         try {
-            console.log(interval.next());
+
+            if (new Date().getTime() == next.getTime()) {
+                console.log(next);
+                next = interval.next();
+            }
         } catch (e) {
             break;
         }

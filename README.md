@@ -29,24 +29,7 @@ RabbitJS is a simple mvc framework for Nodejs
 `filter` 是一个特殊的分层，其本质是一个个route的集合，这种route可以被多个不同的controller调用，会在逻辑进入controller之前过滤和检查这些请求，例如检查用户信息，获取基本数据等。也可以用来串行数据，我通常会把所有的业务逻辑都放到filter中，然后controller基本就是个壳子，一个请求进来，经过一层层的filter，通过express的next关键字互相串联，通过res.locals存储各自的数据，最后在controller中调用res.render将数据传入模板中。
 
 ##基础依赖库
-
-本框架使用了很多基础构建库来实现其最终的快速开发的目标。大概介绍下：
-
-`express` 基础的http服务提供者。
-
-`sequelize` 一个支持多种数据库的orm库，可以将数据库操作映射成js方法，将数据映射到js对象，使开发者更专注于编程，对提升开发效率有明显效果。
-
-`rainbowy` 一个微型库，作用就是根据目录层次生成对象的route，将route分组和梳理，方便管理，特别是route多了的时候效果更是明显。
-
-其他库：
-
- - `less` css预编译，支持实时编译
- - `jade` 默认模板引擎
- - `moment` 模板中得全局对象，用来格式化显示时间
- - `node-uuid` 用来生成uuid，uuid可以做到全站唯一，且不可推导
- - `MD5` 用来生成md5
- - `coffee-script` 本框架的默认编程语言
- - `log4js` 用来做日志管理的库
+[基础依赖库文档](https://github.com/souche/souche-f2e/tree/master/tools/local-service)
 
 ##全局对象和方法
 

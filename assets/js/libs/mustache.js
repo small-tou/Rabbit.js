@@ -303,7 +303,7 @@ var Mustache;
 
   /**
    * Calculates the bounds of the section represented by the given `token` in
-   * the original template by drilling down into nested sections to find the
+   * the original templates by drilling down into nested sections to find the
    * last token that is part of that section. Returns an array of [start, end].
    */
   function sectionBounds(token) {
@@ -321,7 +321,7 @@ var Mustache;
 
   /**
    * Low-level function that compiles the given `tokens` into a function
-   * that accepts three arguments: a Writer, a Context, and the template.
+   * that accepts three arguments: a Writer, a Context, and the templates.
    */
   function compileTokens(tokens) {
     var subRenders = {};
@@ -459,9 +459,9 @@ var Mustache;
   }
 
   /**
-   * Breaks up the given `template` string into a tree of token objects. If
+   * Breaks up the given `templates` string into a tree of token objects. If
    * `tags` is given here it must be an array with two string values: the
-   * opening and closing tags used in the template (e.g. ["<%", "%>"]). Of
+   * opening and closing tags used in the templates (e.g. ["<%", "%>"]). Of
    * course, the default is to use mustaches (i.e. Mustache.tags).
    */
   exports.parse = function (template, tags) {
@@ -579,7 +579,7 @@ var Mustache;
   };
 
   /**
-   * Compiles the given `template` to a reusable function using the default
+   * Compiles the given `templates` to a reusable function using the default
    * writer.
    */
   exports.compile = function (template, tags) {
@@ -587,7 +587,7 @@ var Mustache;
   };
 
   /**
-   * Compiles the partial with the given `name` and `template` to a reusable
+   * Compiles the partial with the given `name` and `templates` to a reusable
    * function using the default writer.
    */
   exports.compilePartial = function (name, template, tags) {
@@ -603,7 +603,7 @@ var Mustache;
   };
 
   /**
-   * Renders the `template` with the given `view` and `partials` using the
+   * Renders the `templates` with the given `view` and `partials` using the
    * default writer.
    */
   exports.render = function (template, view, partials) {

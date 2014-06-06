@@ -13,5 +13,18 @@ program
         updateCLI.create(options)
     });
 
+program
+    .command('rabbit update')
+    .description('fast mvc framework for nodejs')
+    .action(function(options) {
+        updateCLI.update(options)
+    });
+
+program
+    .command('rabbit controller')
+    .description('fast mvc framework for nodejs')
+    .action(function(options) {
+        updateCLI.createController(options.name)
+    });
 
 program.parse(process.argv); // 这行必须是结尾

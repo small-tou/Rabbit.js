@@ -5,8 +5,6 @@ var fse = require("fs-extra");
 var rabbit = {
     create: function() {
         var cliPath = path.resolve('.');
-        console.log(cliPath)
-        console.log(__dirname)
         var folders = ['assets', 'controllers', 'filters', 'models', 'rabbit', 'services', 'tasks', 'services', 'views', 'config.js', 'filters.config.js', 'index.js', 'server.js', 'package.json'];
         folders.forEach(function(folder) {
             var _path = path.join(__dirname, '..', folder);
@@ -20,9 +18,26 @@ var rabbit = {
         })
     },
     update: function() {
-
+        var cliPath = path.resolve('.');
+        var folders = [ 'rabbit'];
+        folders.forEach(function(folder) {
+            var _path = path.join(__dirname, '..', folder);
+            var targetPath = path.join(cliPath, folder);
+            if (fs.existsSync(_path)) {
+                //copy整个目录过去
+                fse.copy(_path, targetPath, function(e) {
+                    if (e) console.log("copy file error:" + e.message);
+                })
+            }
+        })
     },
+    createController:function(name){
+        var cliPath = path.resolve('.');
+        var content = fs.readFileSync(path.join(__dirname,"../templates/controller.js"));
+        content = content.toString().replace(/\{\{name\}\}/g,name);
+        fs.writeFileSync(path.join(cliPath,"controllers",name+".js"),content,'utf-8');
+    }
 
 }
 module.exports = rabbit
-rabbit.create();
+rabbit.createController("yutou");

@@ -15,7 +15,7 @@ exports.route = function(app, paths) {
     app.set('views', approot + paths.template);
     var ctrlDir = approot + (paths.controllers || '/controllers');
     var fltrDir = approot + (paths.filters || '/filters');
-    var tplDir = approot + (paths.template || '/template');
+    var tplDir = approot + (paths.template || '/templates');
     glob.sync(ctrlDir + '/**/*.+(js|coffee)').forEach(function(file) {
         file = file.replace(/\/index\.(js|coffee)$/, '');
         var router = require(file);

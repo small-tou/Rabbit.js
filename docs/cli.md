@@ -1,6 +1,8 @@
 安装和创建项目
 ===========
 
+##首次安装
+
 首先用npm安装最新版本的RabbitJS
 
 `sudo npm install rabbitjs -g`
@@ -19,3 +21,12 @@
 
 默认项目内有一些示例文件，里面有一些标准写法和用法，不需要可以删除掉。
 
+##更新新版本的方法。
+
+如果后续RabbitJS的版本更新了，如何更新项目使用的RabbitJS版本呢？
+
+首先更新你的RabbitJS，`npm update rabbitjs -g`
+
+然后进入项目文件夹，使用`rabbit update`命令即可。
+
+会更新rabbit文件夹下的文件到新版本，不会删除和覆盖其他文件。

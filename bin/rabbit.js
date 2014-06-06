@@ -21,7 +21,8 @@ var rabbit = {
     },
     update: function() {
 
-    }
+    },
+
 }
 module.exports = rabbit
 rabbit.create();

@@ -29,18 +29,12 @@ RabbitJS is a simple mvc framework for Nodejs
 `filter` 是一个特殊的分层，其本质是一个个route的集合，这种route可以被多个不同的controller调用，会在逻辑进入controller之前过滤和检查这些请求，例如检查用户信息，获取基本数据等。也可以用来串行数据，我通常会把所有的业务逻辑都放到filter中，然后controller基本就是个壳子，一个请求进来，经过一层层的filter，通过express的next关键字互相串联，通过res.locals存储各自的数据，最后在controller中调用res.render将数据传入模板中。
 
 ##安装和创建项目
-[基础依赖库文档](https://github.com/xinyu198736/RabbitJS/blob/master/docs/cli.md)
+[安装和创建项目](https://github.com/xinyu198736/RabbitJS/blob/master/docs/cli.md)
 
 ##基础依赖库
 [基础依赖库文档](https://github.com/xinyu198736/RabbitJS/blob/master/docs/thirdparty.md)
 
-##全局对象和方法
-
-注意，不要自己在程序中引入任何全局方法和变量，对应用有强烈破坏性。本框架引入的全局变量是为了方便使用，不要在任何地方使用相同命名的变量和方法。
-
- - `BaseModel` 是一个model对象的顶层封装，把sql和mongo的常用方法操作封装起来，调用new BaseModel(model对象)即可返回一个封装，写在functions层里的，之后你可以在此基础上扩展，_.extend(baseFunction,{其他方法操作})；
- - `loadService` 用来加载services里面的方法，指定相对services目录的路径即可放回一个services对象。
-
+##Controller的定义
 
 ###BaseModel
 

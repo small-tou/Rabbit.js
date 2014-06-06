@@ -20,19 +20,19 @@
           username: "root", //数据库用户名
           password: "", //数据库密码
       },
-      mongo_config: {
-          db: {
-              native_parser: true
-          },
-          server: {
-              poolSize: 5
-          },
-          user: '',
-          pass: '',
-          host: "localhost",
-          port: "27017",
-          database: "local"
-      }
+    // mongo_config: {
+    //     db: {
+    //         native_parser: true
+    //     },
+    //     server: {
+    //         poolSize: 5
+    //     },
+    //     user: '',
+    //     pass: '',
+    //     host: "localhost",
+    //     port: "27017",
+    //     database: "local"
+    // }
   };
 
   module.exports = config;

@@ -8,7 +8,7 @@ path = require('path');
 
 config = require('./config.js');
 
-rainbow = require('./lib/rainbow.js');
+rainbow = require('./rabbit/rainbow.js');
 
 lessmiddle = require('less-middleware');
 

@@ -1,4 +1,4 @@
-LightJS is a simple mvc framework for Nodejs
+RabbitJS is a simple mvc framework for Nodejs
 ================
 本框架是一个simple mvc的库，使用它可以快速构建你的nodejs应用，即使你对nodejs了解并不深入也不会影响你的开发之路。一晚上上线一个网站不是梦。
 ##特色

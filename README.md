@@ -40,10 +40,6 @@ RabbitJS is a simple mvc framework for Nodejs
 ##Model层的定义和封装
 [Model层的定义和封装](https://github.com/xinyu198736/RabbitJS/blob/master/docs/model.md)
 
-###特色功能
-
- - route重命名，用目录自动生成的route不够restful？可以用rename这个方法重命名route，具体见controller示例。
- - filter全局配置，用正则配置
 ##现在开始
 
 接下来，从头开始为您展示如何使用LightMVC开发应用。

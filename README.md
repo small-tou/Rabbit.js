@@ -34,7 +34,8 @@ RabbitJS is a simple mvc framework for Nodejs
 ##基础依赖库
 [基础依赖库文档](https://github.com/xinyu198736/RabbitJS/blob/master/docs/thirdparty.md)
 
-##Controller的定义
+##Controller的定义和介绍
+[Controller的定义和介绍](https://github.com/xinyu198736/RabbitJS/blob/master/docs/controller.md)
 
 ###BaseModel
 

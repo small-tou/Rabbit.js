@@ -3,11 +3,11 @@
 
 ##首次安装
 
-首先用npm安装最新版本的RabbitJS
+首先用npm安装最新版本的Rabbit.js
 
 `sudo npm install rabbitjs -g`
 
-注意一定要全局安装，因为RabbitJS使用全局命令来完成项目管理。
+注意一定要全局安装，因为Rabbit.js使用全局命令来完成项目管理。
 
 然后你就拥有了 rabbit 这个系统命令。
 
@@ -23,9 +23,9 @@
 
 ##更新新版本的方法。
 
-如果后续RabbitJS的版本更新了，如何更新项目使用的RabbitJS版本呢？
+如果后续Rabbit.js的版本更新了，如何更新项目使用的RabbitJS版本呢？
 
-首先更新你的RabbitJS，`npm update rabbitjs -g`
+首先更新你的Rabbit.js，`npm update rabbitjs -g`
 
 然后进入项目文件夹，使用`rabbit update`命令即可。
 

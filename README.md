@@ -1,5 +1,6 @@
 ##Rabbit.js is a fast and light mvc framework for Nodejs
 
+PS：自从用了Rabbit.js，感觉自己萌萌哒~~~
 
 ###关于Rabbit.js
 

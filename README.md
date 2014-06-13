@@ -1,13 +1,13 @@
-Rabbit.JS is a fast and light mvc framework for Nodejs
+Rabbit.js is a fast and light mvc framework for Nodejs
 ================
 
-##关于RabbitJS
+##关于Rabbit.js
 
-RabbitJS 的定位是一个超轻量的快速开发框架。Light and Fast。你甚至很快就可以理解它的底层实现（也许只需要5分钟）。RabbitJS本身的代码量并不大，这得益于很多NodeJS开源库的支持，通过一些有效的组合，成为这样一个简单而清晰的开发框架。
+Rabbit.js 的定位是一个超轻量的快速开发框架。Light and Fast。你甚至很快就可以理解它的底层实现（也许只需要5分钟）。Rabbit.js本身的代码量并不大，这得益于很多NodeJS开源库的支持，通过一些有效的组合，成为这样一个简单而清晰的开发框架。
 
-RabbitJS 能够提供一个清晰的开发思路，让你的应用逻辑清晰并且足够结构化，但是同时又不会增加你的开发复杂度，相反，复杂度被降低，因为在逻辑分层的过程中对很多操作做了封装，你要做的就是关注自己需要关注的逻辑代码，而不用关心框架本身。
+Rabbit.js 能够提供一个清晰的开发思路，让你的应用逻辑清晰并且足够结构化，但是同时又不会增加你的开发复杂度，相反，复杂度被降低，因为在逻辑分层的过程中对很多操作做了封装，你要做的就是关注自己需要关注的逻辑代码，而不用关心框架本身。
 
-RabbitJS 是一个依靠约定和封装进行工作的框架，秉承约定大于配置的快速开发理念，高度自动化，提高开发效率。不过可能因此降低了一些灵活性，但是本框架的定位决定其使用场景，RabbitJS比较适合于中小型项目或者个人项目，得益于其快速开发的特点，可以快速搭建restfull的网络服务。
+Rabbit.js 是一个依靠约定和封装进行工作的框架，秉承约定大于配置的快速开发理念，高度自动化，提高开发效率。不过可能因此降低了一些灵活性，但是本框架的定位决定其使用场景，Rabbit.js比较适合于中小型项目或者个人项目，得益于其快速开发的特点，可以快速搭建restfull的网络服务。
 
 ##特色
 
@@ -37,16 +37,16 @@ RabbitJS 是一个依靠约定和封装进行工作的框架，秉承约定大�
 `filter` 是一个特殊的分层，其本质是一个个route的集合，这种route可以被多个不同的controller调用，会在逻辑进入controller之前过滤和检查这些请求，例如检查用户信息，获取基本数据等。也可以用来串行数据，我通常会把所有的业务逻辑都放到filter中，然后controller基本就是个壳子，一个请求进来，经过一层层的filter，通过express的next关键字互相串联，通过res.locals存储各自的数据，最后在controller中调用res.render将数据传入模板中。
 
 ##安装和创建项目
-[安装和创建项目](https://github.com/xinyu198736/RabbitJS/blob/master/docs/cli.md)
+[安装和创建项目](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/cli.md)
 
 ##基础依赖库
-[基础依赖库文档](https://github.com/xinyu198736/RabbitJS/blob/master/docs/thirdparty.md)
+[基础依赖库文档](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/thirdparty.md)
 
 ##Controller的定义和介绍
-[Controller的定义和介绍](https://github.com/xinyu198736/RabbitJS/blob/master/docs/controller.md)
+[Controller的定义和介绍](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/controller.md)
 
 ##Model层的定义和封装
-[Model层的定义和封装](https://github.com/xinyu198736/RabbitJS/blob/master/docs/model.md)
+[Model层的定义和封装](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/model.md)
 
 
 

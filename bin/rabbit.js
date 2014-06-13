@@ -19,7 +19,7 @@ var rabbit = {
     },
     update: function() {
         var cliPath = path.resolve('.');
-        var folders = [ 'rabbit'];
+        var folders = ['rabbit'];
         folders.forEach(function(folder) {
             var _path = path.join(__dirname, '..', folder);
             var targetPath = path.join(cliPath, folder);
@@ -31,11 +31,14 @@ var rabbit = {
             }
         })
     },
-    createController:function(name){
+    createController: function(name) {
         var cliPath = path.resolve('.');
-        var content = fs.readFileSync(path.join(__dirname,"../templates/controller.js"));
-        content = content.toString().replace(/\{\{name\}\}/g,name);
-        fs.writeFileSync(path.join(cliPath,"controllers",name+".js"),content,'utf-8');
+        var content = fs.readFileSync(path.join(__dirname, "../templates/controller.js"));
+        content = content.toString().replace(/\{\{name\}\}/g, name);
+        fs.writeFileSync(path.join(cliPath, "controllers", name + ".js"), content, 'utf-8');
+    },
+    createFunction: function() {
+
     }
 
 }

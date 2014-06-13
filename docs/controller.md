@@ -11,7 +11,7 @@ Controller的定义
 
 ###目录结构
 
-controllers文件夹里可以防止很多controller，而且程序初始化的时候会扫描这个文件夹，对所有controller进行初始化，然后自动生成对应的url的route，这是本框架的一大特色。
+controllers文件夹里可以放置很多controller，而且程序初始化的时候会扫描这个文件夹，对所有controller进行初始化，然后自动生成对应的url的route，这是本框架的一大特色。
 
 controllers里可以创建多层文件夹，每个文件夹代表route里的一级。
 

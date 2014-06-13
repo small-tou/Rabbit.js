@@ -1,6 +1,14 @@
-RabbitJS is a simple mvc framework for Nodejs
+Rabbit.JS is a fast and light mvc framework for Nodejs
 ================
-本框架是一个simple mvc的库，使用它可以快速构建你的nodejs应用，即使你对nodejs了解并不深入也不会影响你的开发之路。一晚上上线一个网站不是梦。
+
+##关于RabbitJS
+
+RabbitJS 的定位是一个超轻量的快速开发框架。Light and Fast。你甚至很快就可以理解它的底层实现（也许只需要5分钟）。RabbitJS本身的代码量并不大，这得益于很多NodeJS开源库的支持，通过一些有效的组合，成为这样一个简单而清晰的开发框架。
+
+RabbitJS 能够提供一个清晰的开发思路，让你的应用逻辑清晰并且足够结构化，但是同时又不会增加你的开发复杂度，相反，复杂度被降低，因为在逻辑分层的过程中对很多操作做了封装，你要做的就是关注自己需要关注的逻辑代码，而不用关心框架本身。
+
+RabbitJS 是一个依靠约定和封装进行工作的框架，秉承约定大于配置的快速开发理念，高度自动化，提高开发效率。不过可能因此降低了一些灵活性，但是本框架的定位决定其使用场景，RabbitJS比较适合于中小型项目或者个人项目，得益于其快速开发的特点，可以快速搭建restfull的网络服务。
+
 ##特色
 
  - 清晰的应用分层，可以帮助您构建大型的应用，具体见章节“分层”
@@ -40,24 +48,10 @@ RabbitJS is a simple mvc framework for Nodejs
 ##Model层的定义和封装
 [Model层的定义和封装](https://github.com/xinyu198736/RabbitJS/blob/master/docs/model.md)
 
-##现在开始
 
-接下来，从头开始为您展示如何使用LightMVC开发应用。
 
-###前期准备
 
-首先确保安装了nodejs环境，然后将此框架从github clone 到本地目录
 
-`git clone https://github.com/xinyu198736/LightMVC.git project_name`
 
-首先，决定你用mysql还是mongodb，当然也可以同时用二者，只需要按照config.js中得配置示例配置即可，如果不需要使用mysql，把mysql_config整个去掉即可，否则会报错。
 
-其他的配置基本不需要修改，默认即可。配置文件有详细注释，可以自行查看。
 
-对了，还有最基本的 `npm install` 安装一下依赖的包。
-
-还真别说，这时候你启动`node server.js`按照道理来说，整个应用都会成功启动起来，这时候应用已经跑起来啦。
-
-###开发一个应用逻辑的步骤
-
-首先，给你的应用定义相应地Model，

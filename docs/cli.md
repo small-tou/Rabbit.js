@@ -30,3 +30,10 @@
 然后进入项目文件夹，使用`rabbit update`命令即可。
 
 会更新rabbit文件夹下的文件到新版本，不会删除和覆盖其他文件。
+
+##其他命令
+
+```
+rabbit controller -name controllerName #生成一个controller模板
+
+```

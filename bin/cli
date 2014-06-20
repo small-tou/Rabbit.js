@@ -8,23 +8,30 @@ program
 
 program
     .command('rabbit create')
-    .description('fast mvc framework for nodejs')
+    .description('create a project')
     .action(function(options) {
         updateCLI.create(options)
     });
 
 program
     .command('rabbit update')
-    .description('fast mvc framework for nodejs')
+    .description('update the project')
     .action(function(options) {
         updateCLI.update(options)
     });
 
 program
     .command('rabbit controller')
-    .description('fast mvc framework for nodejs')
+    .description('create controller')
     .action(function(options) {
         updateCLI.createController(options.name)
+    });
+
+program
+    .command('rabbit automodel')
+    .description('create model config')
+    .action(function(options) {
+    updateCLI.createAutoModel()
     });
 
 program.parse(process.argv); // 这行必须是结尾

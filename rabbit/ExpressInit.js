@@ -7,9 +7,6 @@ config = require('./../config.js');
 
 rainbow = require('./rainbow.js');
 
-lessmiddle = require('less-middleware');
-
-less = require('less');
 
 log4js = require('log4js');
 express = require('express');
@@ -22,11 +19,7 @@ module.exports = function(app) {
         app.set('view engine', 'jade');
         app.use(express.favicon());
 
-        //静态文件访问支持，less实时编译
-        app.use('/assets', lessmiddle({
-            src: __dirname + '/assets',
-            compress: true
-        }));
+
         app.use('/assets', express['static'](__dirname + '/assets'));
         app.use('/uploads', express['static'](__dirname + '/uploads'));
         //日志支持

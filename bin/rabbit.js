@@ -2,6 +2,7 @@ var path = require('path');
 var fs = require("fs");
 var walkdo = require('walkdo');
 var fse = require("fs-extra");
+var create_mysql_model = require("./../rabbit/lib/create_mysql_model.js");
 var rabbit = {
     create: function() {
         var cliPath = path.resolve('.');
@@ -39,6 +40,9 @@ var rabbit = {
     },
     createFunction: function() {
 
+    },
+    createAutoModel: function() {
+        create_mysql_model();
     }
 
 }

@@ -1,37 +1,39 @@
 #!/usr/bin/env node
 
 var program = require('commander'),
-    updateCLI = require('./update');
+    updateCLI = require('./rabbit.js'),
+    libInfo = require('../package');
 
 program
     .version(libInfo.version)
 
 program
-    .command('rabbit create')
+    .command('create')
     .description('create a project')
     .action(function(options) {
         updateCLI.create(options)
     });
 
 program
-    .command('rabbit update')
+    .command('update')
     .description('update the project')
     .action(function(options) {
         updateCLI.update(options)
     });
 
 program
-    .command('rabbit controller')
+    .command('controller')
+    .option('-n, --name', 'Add controller')
     .description('create controller')
-    .action(function(options) {
-        updateCLI.createController(options.name)
+    .action(function(name) {
+        updateCLI.createController(name)
     });
 
 program
-    .command('rabbit automodel')
+    .command('automodel')
     .description('create model config')
     .action(function(options) {
-    updateCLI.createAutoModel()
+        updateCLI.createAutoModel()
     });
 
 program.parse(process.argv); // 这行必须是结尾

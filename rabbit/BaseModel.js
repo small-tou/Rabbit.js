@@ -5,7 +5,7 @@ var BaseModel = function(modelName, modelType) {
         //生成一个Model对象
         this.Model = loadModel(modelName);
         //同步数据库
-        this.Model.sync();
+        this.Model && this.Model.sync();
     } else {
         this.Model = loadMongoModel(modelName);
     }

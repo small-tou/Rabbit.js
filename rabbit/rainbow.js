@@ -35,15 +35,15 @@ exports.route = function(app, paths) {
             methods.forEach(function(method) {
                 var eachRouter = r[method];
                 if (eachRouter) {
-                    console.log(p)
+
                     var controller = new BaseController(app, eachRouter, p.replace(/^\//, ''), method);
 
                     if (controller.newName) {
                         p = p.replace(controller.name, controller.newName);
-                        console.log(method + ':' + p)
+                        console.log("route:" + method + ':' + p)
                         app[method].apply(app, [p].concat(controller.getRoutes()));
                     } else {
-                        console.log(method + ':' + p)
+                        console.log("route:" + method + ':' + p)
                         app[method].apply(app, [p].concat(controller.getRoutes()));
                     }
 

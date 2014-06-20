@@ -1,5 +1,4 @@
-var func_example;
-
+/**
 func_teacher = loadService('teacher');
 module.exports = {
     '/': {
@@ -34,12 +33,6 @@ module.exports = {
                 });
             }
         }
-    },
-    '/update': {
-        get: function() {
-            return function(req, res, next) {
-
-            }
-        }
     }
 };
+*/

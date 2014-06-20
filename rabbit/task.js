@@ -27,7 +27,7 @@ var createTask = function(cron, file) {
 
 setTimeout(function() {
 
-    var tasks = require("./../tasks/task.json");
+    var tasks = require("./../tasks/task.js");
     for (var cron in tasks) {
         var file = path.join(config.base_path, "tasks", tasks[cron]);
         createTask(cron, file);

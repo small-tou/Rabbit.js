@@ -40,8 +40,13 @@ global.loadModel = function(modelName) {
         options.tableName = model_config.tableName;
         delete model_config.tableName
     }
+    if (!sequelize) {
+        throw new Error("请配置mysql数据库，")
+    }
     obj = sequelize.define(modelName.replace(/\/|\\/g, '_'), model_config, options);
     obj.db_type = 'sql';
+
+
     return obj;
 };
 

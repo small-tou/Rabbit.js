@@ -8,9 +8,9 @@ P.prototype = {
         var self = this;
         var cp = child_process.fork(this.file); //生成子进程，indexFile进程文件地址 
         console.log('task started pid:' + cp.pid);
-        cp.on('exit', function() {
-            self.start();
-        })
+        // cp.on('exit', function() {
+        //     self.start();
+        // })
     }
 }
 module.exports = function(filePath) {

@@ -1,36 +1,33 @@
 {
-    "name": "rabbitjs",
-    "version": "0.0.18",
-    "description": "本框架是一个simple mvc的库，使用它可以快速构建你的nodejs应用，即使你对nodejs了解并不深入也不会影响你的开发之路。一晚上上线一个网站不是梦。",
+    "name": "appname",
+    "version": "0.0.1",
+    "description": "",
     "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
     "author": "",
     "license": "BSD",
     "repository": {
         "type": "git",
-        "url": "https://github.com/xinyu198736/RabbitJS"
+        "url": ""
     },
     "dependencies": {
+        "MD5": "~1.2.1",
+        "coffee-script": "~1.7.1",
         "commander": "^2.2.0",
         "cron-parser": "^0.3.6",
         "express": "~3.4.8",
         "fs-extra": "^0.9.1",
         "glob": "~3.2.8",
         "jade": "~1.1.5",
+        "less": "~1.6.3",
+        "less-middleware": "~0.1.15",
         "log4js": "~0.6.10",
         "methods": "~0.1.0",
         "moment": "~2.5.1",
         "mongoose": "*",
         "mysql": "~2.1.1",
         "node-uuid": "~1.4.1",
-        "queuedo": "^0.9.8",
         "sequelize": "~2.0.0-dev11",
         "underscore": "*",
         "walkdo": "^0.9.5"
-    },
-    "bin": {
-        "rabbit": "./bin/cli"
     }
 }

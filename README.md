@@ -25,14 +25,12 @@ Rabbit.js 是一个依靠约定和封装进行工作的框架，秉承约定大�
  - 默认为您配置了一个可用的express服务器。
  - clone下来，查看文档，立马开始您的开发之旅。
 
-###分层
-[分层约定](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/layer.md)
-
 ###安装和创建项目
 [安装和创建项目](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/cli.md)
 
-###基础依赖库
-[基础依赖库文档](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/thirdparty.md)
+###分层
+[分层约定](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/layer.md)
+
 
 ###Controller的定义和介绍
 [Controller的定义和介绍](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/controller.md)
@@ -48,6 +46,9 @@ Rabbit.js 是一个依靠约定和封装进行工作的框架，秉承约定大�
 
 ###定时任务
 [定时任务](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/task.md)
+
+###基础依赖库
+[基础依赖库文档](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/thirdparty.md)
 
 
 

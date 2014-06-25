@@ -70,6 +70,7 @@ BaseModel.prototype = {
                     order: self.params.order,
                     raw: self.params.raw
                 }).success(function(data) {
+                    self.result = data;
                     callback(null, data);
                 }).error(function(e) {
                     callback(e);
@@ -78,6 +79,7 @@ BaseModel.prototype = {
                 self.params.where = self.params.where || {};
                 self.params.where[_id] = id;
                 self.Model.findOne(self.params.where, (self.params.fields ? self.params.fields.join(' ') : null), function(err, data) {
+                    self.result = data;
                     callback(err, data)
                 })
             }
@@ -97,6 +99,7 @@ BaseModel.prototype = {
                     order: self.params.order,
                     raw: self.params.raw
                 }).success(function(data) {
+                    self.result = data;
                     callback(null, data);
                 }).error(function(e) {
                     callback(e);
@@ -105,6 +108,7 @@ BaseModel.prototype = {
                 self.params.where = self.params.where || {};
                 self.params.where[field] = value;
                 self.Model.findOne(self.params.where, (self.params.fields ? self.params.fields.join(' ') : null), function(err, data) {
+                    self.result = data;
                     callback(err, data)
                 })
             }
@@ -179,11 +183,15 @@ BaseModel.prototype = {
                 if (self.result) {
                     self.Model.update({
                         _id: self.result._id
-                    }, kv, function(err, numberAffected, raw) {
+                    }, kv, {
+                        multi: true
+                    }, function(err, numberAffected, raw) {
                         callback(err);
                     })
                 } else {
-                    self.Model.update(self.params.where, kv, function(err, numberAffected, raw) {
+                    self.Model.update(self.params.where, kv, {
+                        multi: true
+                    }, function(err, numberAffected, raw) {
                         callback(err);
                     })
                 }
@@ -228,35 +236,43 @@ BaseModel.prototype = {
         this.action = null;
         this.action = function(callback) {
             if (self.Model.db_type == 'sql') {
-                if (self.result) {
-                    var obj = {}
-                    obj[key] = self.result[key] * 1 + 1;
-                    self.result.updateAttributes(obj, [key]).success(function(data) {
-                        callback(null, data);
-                    }).error(function(e) {
-                        callback(e);
-                    });
-                } else {
-                    callback(new Error('先调用findBy再调用addCount，please'))
-                }
+                self.Model.find({
+                    where: self.params.where
+                }).success(function(data) {
+                    if (!data) {
+
+                    } else {
+                        var obj = {}
+                        obj[key] = data[key] * 1 + 1;
+                        console.log(obj)
+                        data.updateAttributes(obj, [key]).success(function(data) {
+                            callback(null, data);
+                        }).error(function(e) {
+                            callback(e);
+                        });
+                    }
+                }).error(function(e) {
+                    callback(e);
+                });
             } else {
-                if (self.result) {
-                    var obj = {};
-                    obj[key] = self.result[key] * 1 + 1;
-                    self.Model.update(obj, {
-                        _id: self.result._id
-                    }).success(function() {
-                        callback()
-                    });
-                } else {
-                    callback(new Error('先调用findBy再调用addCount，please'))
-                }
+                self.Model.findOne(self.params.where, (self.params.fields ? self.params.fields.join(' ') : null), function(err, data) {
+                    var obj = {}
+                    obj[key] = data[key] * 1 + 1;
+                    self.Model.update(self.params.where, obj, function(err, numberAffected, raw) {
+                        callback(err);
+                    })
+                })
             }
         }
         return this;
     },
     getAllAndCount: function() {
 
+    },
+    updateOrAdd: function(kv, key) {
+        // if (self.Model.db_type == 'sql') {
+
+        // }
     }
 }
 

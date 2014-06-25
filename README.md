@@ -31,7 +31,6 @@ Rabbit.js 是一个依靠约定和封装进行工作的框架，秉承约定大�
 ###分层
 [分层约定](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/layer.md)
 
-
 ###Controller的定义和介绍
 [Controller的定义和介绍](https://github.com/xinyu198736/Rabbit.js/blob/master/docs/controller.md)
 

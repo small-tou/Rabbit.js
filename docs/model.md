@@ -3,14 +3,16 @@ BaseModel是本框架对Model层的一个常用功能封装，将mongodb和mysql
 
 基本的api:
 
- - `getAll` 批量获取记录。
- - `getById` 根据id获取单条记录，mongodb根据_id获取。参数是id。
- - `getByField` 根据某个字段的值获取单条记录，其实都是getAll的扩展。参数是 字段名和字段值。
+ - `findAll` 批量获取记录。
+ - `findById` 根据id获取单条记录，mongodb根据_id获取。参数是id。
+ - `findByField` 根据某个字段的值获取单条记录，其实都是getAll的扩展。参数是 字段名和字段值。
  - `update` 更新某条记录，参数是更新的字段和值的kv json。
  - `delete` 删除某条记录，参数是筛选的字段和值的kv json。
  - `count` 获取记录数量。
  - `add` 添加记录，参数是记录的字段和值的kv json。
  - `addCount` 针对某字段进行加1的操作。
+ - `find` 直接查找一条记录
+ - `updateOrAdd` 根据where条件判断是否存在记录，如果不存在则添加，如果存在则更新
 
 可用于筛选条件的api:
 
@@ -30,17 +32,17 @@ BaseModel是本框架对Model层的一个常用功能封装，将mongodb和mysql
 ```
 var Example = new BaseModel('examples','sql'); //第二个参数制定类型，sql和mongo两个值，默认不填是sql。
 //查询所有，带着条件
-Example.getAll().where({id:{lt:3}}).offset(10).limit(10).order({id:"desc"}).fields(['id','title','content']).done(function(error,datas){
+Example.findAll().where({id:{lt:3}}).offset(10).limit(10).order({id:"desc"}).fields(['id','title','content']).done(function(error,datas){
 
 })
 
 //根据id查询某条记录
-Example.getById(id).done(function(error,data){
+Example.findById(id).done(function(error,data){
     
 })
 
 //根据某个field的值获取某一条记录，获取多个记录用getAll+where。
-Example.getByField("name","yutou").done(function(error,data){
+Example.findByField("name","yutou").done(function(error,data){
     
 })
 

@@ -57,6 +57,31 @@ BaseModel.prototype = {
         }
         return this;
     },
+    find: function() {
+        var self = this;
+        this.action = null;
+        this.action = function(callback) {
+            if (self.Model.db_type == 'sql') {
+                self.Model.find({
+                    where: self.params.where,
+                    attributes: self.params.fields,
+                    order: self.params.order,
+                    raw: self.params.raw
+                }).success(function(data) {
+                    callback(error, data);
+                }).error(function(e) {
+                    callback(e);
+                });
+            } else {
+                self.Model.findOne().where(self.params.where).select((self.params.fields ? self.params.fields.join(' ') : null))
+                    .exec(function(error, data) {
+                        callback(error, data);
+                    })
+
+            }
+        }
+        return this;
+    },
     findById: function(id) {
         var self = this;
         this.action = null;
@@ -269,10 +294,50 @@ BaseModel.prototype = {
     getAllAndCount: function() {
 
     },
-    updateOrAdd: function(kv, key) {
-        // if (self.Model.db_type == 'sql') {
-
-        // }
+    updateOrAdd: function(kv) {
+        var self = this;
+        this.action = null;
+        this.action = function(callback) {
+            if (self.Model.db_type == 'sql') {
+                self.Model.find({
+                    where: self.params.where,
+                    attributes: self.params.fields,
+                    order: self.params.order,
+                    raw: self.params.raw
+                }).success(function(data) {
+                    if (data) {
+                        self.Model.update(kv, self.params.where).success(function() {
+                            callback();
+                        }).error(function(e) {
+                            callback(e);
+                        });
+                    } else {
+                        self.Model.add(kv).success(function(data) {
+                            callback(null, data)
+                        }).error(function(e) {
+                            callback(e);
+                        });
+                    }
+                }).error(function(e) {
+                    callback(e);
+                });
+            } else {
+                self.Model.findOne().where(self.params.where).select((self.params.fields ? self.params.fields.join(' ') : null))
+                    .exec(function(error, data) {
+                        if (data) {
+                            self.Model.update(self.params.where, kv, {
+                                multi: true
+                            }, function(err, numberAffected, raw) {
+                                callback(err);
+                            })
+                        } else {
+                            self.Model.create(kv, function(err, model) {
+                                callback(err, model);
+                            })
+                        }
+                    })
+            }
+        }
     }
 }
 

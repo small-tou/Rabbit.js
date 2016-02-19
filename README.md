@@ -2,6 +2,8 @@
 
 PS：自从用了Rabbit.js，感觉自己萌萌哒~~~
 
+warning: 此项目已经不再维护，大家不要fork，star，watch了，也不要用在项目中。
+
 ###关于Rabbit.js
 
 Rabbit.js 的定位是一个超轻量的快速开发框架。Light and Fast。你甚至很快就可以理解它的底层实现（也许只需要5分钟）。Rabbit.js本身的代码量并不大，这得益于很多NodeJS开源库的支持，通过一些有效的组合，成为这样一个简单而清晰的开发框架。

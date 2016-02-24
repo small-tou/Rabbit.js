@@ -1,4 +1,5 @@
 var app, config, express, http, less, lessmiddle, log4js, path, rainbow;
+var less = require('less-middleware');
 http = require('http');
 
 path = require('path');
@@ -19,7 +20,7 @@ module.exports = function(app) {
         app.set('view engine', 'jade');
         app.use(express.favicon());
 
-
+        app.use(less({ src: path.join(config.base_path, '/assets') }));
         app.use('/assets', express['static'](__dirname + '/assets'));
         app.use('/uploads', express['static'](__dirname + '/uploads'));
         //日志支持
